@@ -5,7 +5,10 @@ magnus
 mohammad
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 test
+=======
+>>>>>>> origin/master
 
 efrit
 <<<<<<< Updated upstream
@@ -13,8 +16,14 @@ efrit
 lol
 
 john
+<<<<<<< HEAD
 =======
 =======
 Hei
 >>>>>>> origin/Magnus
 >>>>>>> Stashed changes
+=======
+
+eirik
+
+>>>>>>> origin/master
