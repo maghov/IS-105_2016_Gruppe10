@@ -1,15 +1,24 @@
-hehehehe
-
-magnus
-
-mohammad
+John
 
 
-efrit
+Mohammad
 
-lol
+Eirik 4 president
 
-john
+
+Magnus H
+
 
 eirik
+<<<<<<< HEAD
+<<<<<<< HEAD
 
+
+Magnus tetter en do akkurat nå
+=======
+ 
+Erik
+>>>>>>> origin/master
+=======
+ 
+>>>>>>> parent of 15f5915... LOL
