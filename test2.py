@@ -4,6 +4,3 @@ magnus
 
 mohammad
 
-test
-
-efrit
