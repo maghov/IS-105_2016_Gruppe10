@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+<<<<<<< HEAD:ProgramForSubtrahere2Tall
+#John
+#Program for å subtrahere to tall
+=======
+#Program for å subtrahere to tall
+#Eirik
+>>>>>>> master:ProgramForMultiplisere2Tall
+=======
 <<<<<<< HEAD:ProgramForMultiplisere2Tall
 #Program for å subtrahere to tall
 #Eirik
@@ -5,6 +14,7 @@
 #John
 #Program for å subtrahere to tall
 >>>>>>> John:ProgramForSubtrahere2Tall
+>>>>>>> master
 
 print('Program for å subtrahere to tall')
 Tall1 = int(input('Skriv inn tall nr.1 = '))
