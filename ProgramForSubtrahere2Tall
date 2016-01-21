@@ -1,0 +1,19 @@
+<<<<<<< HEAD:ProgramForMultiplisere2Tall
+#Program for å subtrahere to tall
+<<<<<<< HEAD:ProgramForMultiplisere2Tall
+#Eirik Oliversen
+=======
+#Eirik
+=======
+#John
+#Program for å subtrahere to tall
+>>>>>>> John:ProgramForSubtrahere2Tall
+>>>>>>> 1134dca5727a80e63bd23b6b415b94cace6e8b31:ProgramForSubtrahere2Tall
+
+print('Program for å subtrahere to tall')
+Tall1 = int(input('Skriv inn tall nr.1 = '))
+Tall2 = int(input('Skriv inn tall nr.2 = '))
+
+Sum = Tall1-Tall2
+
+print('Sum av tall nr.1 og tall nr.2 =',Sum,)
