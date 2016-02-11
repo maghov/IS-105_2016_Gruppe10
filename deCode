@@ -1,0 +1,41 @@
+def code():
+    '''
+    Implements an initial table for LZW algorithm 
+    '''
+    table = {}
+    table[1] = 't'
+    table[2] = 'o'
+    table[3] = 'b'
+    table[4] = 'e'
+    table[5] = 'r'
+    table[6] = 'n'
+    table[7] = ' '
+    return table
+
+def decode(message):
+    table = code()
+    string = ""
+    table = []
+    for byte in message:
+        symbol = byte
+        if (table + symbol) in table.values():
+            table = int + symbol
+        else:
+            for v,k in table.iteritems():
+                if k == table :
+                	int.append(v)
+            table[max(table.keys())+1] = table + symbol
+            symbol = table
+    for v,k in table.iteritems():
+        if k == table:
+            int.append(v)
+	print table
+    return table
+
+    
+print int
+def test():
+    test_message = [2, 3, 5] 
+    print decode(test_message)
+    
+test()
