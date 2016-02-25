@@ -1,5 +1,5 @@
 
-haystack = open('test.txt', 'r+')
+haystack = open('test2.txt', 'r+')
 needle = 'test'
 
 def search_fast(haystack, needle):
