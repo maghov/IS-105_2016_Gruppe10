@@ -2,7 +2,7 @@ import timeit
  
 haystack = open('test.txt', 'r+')
 words = list(haystack.read().split())
-needle = 'pollen into flowers'
+needle = 'More'
  
 def search_fast(haystack, needle):
     for item in haystack:
