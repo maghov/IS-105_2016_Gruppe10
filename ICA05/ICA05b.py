@@ -1,5 +1,4 @@
-
-haystack = open('test.txt', 'r+')
+haystack = open('test.txt', 'r+').read()
 needle = 'test'
 
 def search_fast(haystack, needle):
@@ -24,3 +23,4 @@ print(timeit.timeit("search_slow(haystack, needle)", setup="from __main__ import
 
 search_fast(haystack, needle)
 print(timeit.timeit("search_fast(haystack, needle)", setup="from __main__ import search_fast, haystack, needle"))
+
