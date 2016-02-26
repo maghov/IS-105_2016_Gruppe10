@@ -1,14 +1,10 @@
 import timeit
  
-haystack = open('test.txt', 'r+')
-words = list(haystack.read().split())
-needle = 'More'
- 
+  
 def search_fast(haystack, needle):
     for item in haystack:
         if item == needle:
-            return_value = True        
-        return True
+        	return True
     return False
  
  
@@ -18,11 +14,24 @@ def search_slow(haystack, needle):
         if item == needle:
             return_value = True
     return return_value
- 
- 
- 
-search_slow(haystack, needle)
-print(timeit.timeit("search_slow(haystack, needle)", setup="from __main__ import search_slow, haystack, needle"))
- 
-search_fast(haystack, needle)
-print(timeit.timeit("search_fast(haystack, needle)", setup="from __main__ import search_fast, haystack, needle"))
+    
+    
+def test_slow(): 
+	int = range(1000) 
+	search_slow(int, 500)
+	
+	
+	"""liste = []
+	for i in range(500):
+		liste.append(i)
+		chr(i)"""
+	
+	
+def test_fast(): 
+	int = range(1000)
+	search_fast(int, 500)
+	
+	 
+print(timeit.timeit("test_slow()", setup="from __main__ import test_slow", number = 10))
+print(timeit.timeit("test_fast()", setup="from __main__ import test_fast", number = 10))
+
