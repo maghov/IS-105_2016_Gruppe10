@@ -3,11 +3,7 @@ import matplotlib.pyplot as plt
 
 N = 4
 slow_tid = (21, 35, 30, 35)
-<<<<<<< HEAD
-
-=======
 slow_slow = (0, 0, 0, 0)
->>>>>>> 93af3420bc0f212edf88b47e0e55683396b3b0c4
 
 ind = np.arange(N)  # the x locations for the groups
 width = 0.25       # the width of the bars
