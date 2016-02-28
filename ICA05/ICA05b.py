@@ -17,8 +17,8 @@ def search_slow(haystack, needle):
     
     
 def test_slow(): 
-	int = range(1000) 
-	search_slow(int, 500)
+	int = range(1000000) 
+	search_slow(int, 900000)
 	
 	
 	"""liste = []
@@ -28,8 +28,8 @@ def test_slow():
 	
 	
 def test_fast(): 
-	int = range(1000)
-	search_fast(int, 500)
+	int = range(1000000)
+	search_fast(int, 900000)
 	
 	 
 print(timeit.timeit("test_slow()", setup="from __main__ import test_slow", number = 10))
