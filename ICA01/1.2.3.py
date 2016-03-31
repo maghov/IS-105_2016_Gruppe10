@@ -1,11 +1,4 @@
 # -*- coding: utf-8 -*-
-'''
-Module med eksempler i uke 04 (informasjonsteori)
-Løsninger for klasseoppgavene 25.01.2016 implementeres her
-Løsningsforslag innleveres i gruppe-repositorien.
-GRUPPENR: 2
-STUDENTER: Christian Moen, Erlend Thorvik, Tommy Ea, Merethe sjøberg, Ola Eriksen & Benjamin Gutierrez Børresen
-'''
 
 def code():
     '''
