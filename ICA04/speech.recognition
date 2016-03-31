@@ -1,7 +1,5 @@
 import speech_recognition as sr
 import pyttsx
-import ChatBot
-
 
 engine = pyttsx.init()
 engine.setProperty('rate', 70)
