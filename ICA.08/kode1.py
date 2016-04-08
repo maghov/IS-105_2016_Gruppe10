@@ -22,9 +22,6 @@ fox1 = 0
 grain1 = 0
 pig1 = 0
 
-#Tilstand 1 = Venstre side
-#Tilstand 2 = Høyre side
-
 class App:
 
     def __init__(self, master):
