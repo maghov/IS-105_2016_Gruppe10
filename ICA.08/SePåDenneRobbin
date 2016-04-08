@@ -1,0 +1,75 @@
+# -*- coding: utf-8 -*-
+from Tkinter import *
+import time
+
+root = Tk()
+
+
+canvas = Canvas(root, width=700, height=300)
+canvas.pack()
+
+boat = canvas.create_rectangle(100, 50, 200, 20, fill = "yellow")
+water = canvas.create_rectangle(50, 100, 650, 50, fill = "blue")
+leftSide = canvas.create_rectangle(0, 100, 100, 25, fill = "brown")
+rightSide = canvas.create_rectangle(700, 100, 600, 25, fill = "brown")
+fox = canvas.create_rectangle(10, 10, 20, 20, fill = "orange")
+pig = canvas.create_rectangle(30, 10, 20, 20, fill = "red")
+grain = canvas.create_rectangle(60, 10, 30, 20, fill ="green")
+foxInboat = 10
+
+class App:
+
+    def __init__(self, master):
+
+        frame = Frame(master)
+        frame.pack()
+
+        self.button = Button(
+            frame, text="QUIT", fg="red", command=frame.quit
+            )
+        self.button.pack(side=LEFT)
+
+        self.venstre = Button(frame, text="Venstre", command=self.venstre)
+        self.venstre.pack(side=LEFT)
+
+        self.hoyre = Button(frame, text="Høyre", command=self.hoyre)
+        self.hoyre.pack(side=LEFT)
+
+        self.fox = Button(frame, text="Rev i båt", command=self.fox)
+        self.fox.pack(side=LEFT)
+
+    def fox(self):
+     	for x in range(0, 10):
+			canvas.move(5, 10, 0)
+			root.update()
+			time.sleep(0.03)
+			foxInboat = 0
+
+
+
+    def hoyre(self):
+    	if foxInboat == 0:
+    		for x in range(0, 100):
+				canvas.move(5, 4, 0)
+				root.update()
+				time.sleep(0.02)
+				print "test"
+
+		else:
+			print "Hei"
+
+    def venstre(self):
+        for x in range(0, 100):
+			canvas.move(1, -4, 0)
+			root.update()
+			time.sleep(0.02)
+
+
+
+
+
+
+app = App(root)
+
+root.mainloop()
+root.destroy() # optional; see description below
