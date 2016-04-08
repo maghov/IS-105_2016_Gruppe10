@@ -54,10 +54,29 @@ class App:
 
 
     def venstre(self):
-        for x in range(0, 100):
-            canvas.move(1, -4, 0)
-            root.update()
-            time.sleep(0.02)
+        if fox1 == 3:
+           for x in range(0, 100):
+                canvas.move(1, -4, 0)
+                canvas.move(5, -4, 0)
+                root.update()
+                time.sleep(0.02)
+        elif grain1 == 3:
+            for x in range(0, 100):
+                canvas.move(1, -4, 0)
+                canvas.move(7, -4, 0)
+                root.update()
+                time.sleep(0.02)
+        elif pig1 == 3:
+            for x in range(0, 100):
+                canvas.move(1, -4, 0)
+                canvas.move(6, -4, 0)
+                root.update()
+                time.sleep(0.02)
+        else:
+            for x in range(0, 100):
+                 canvas.move(1, -4, 0)
+                 root.update()
+                 time.sleep(0.02)
 
     def fox(self):
         if fox1 == 0:
@@ -75,6 +94,22 @@ class App:
                 time.sleep(0.02)
             global fox1
             fox1 = 2
+            print fox1
+        elif fox1 == 2:
+            for x in range(0, 10):
+                canvas.move(5, -10, 0)
+                root.update()
+                time.sleep(0.02)
+            global fox1
+            fox1 = 3
+            print fox1
+        elif fox1 == 3:
+            for x in range(0, 10):
+                canvas.move(5, -10, 0)
+                root.update()
+                time.sleep(0.02)
+            global fox1
+            fox1 = 0
             print fox1
 
 
@@ -94,6 +129,22 @@ class App:
                 global grain1
                 grain1 = 2
                 print grain1
+        elif grain1 == 2:
+            for x in range(0, 10):
+                canvas.move(7, -10, 0)
+                root.update()
+                time.sleep(0.02)
+            global grain1
+            grain1 = 3
+            print grain1
+        elif grain1 == 3:
+            for x in range(0, 10):
+                canvas.move(7, -10, 0)
+                root.update()
+                time.sleep(0.02)
+            global grain1
+            grain1 = 0
+            print grain1
 
     def pig(self):
         if pig1 == 0:
@@ -111,6 +162,22 @@ class App:
                 global pig1
                 pig1 = 2
                 print pig1
+        elif pig1 == 2:
+            for x in range(0, 10):
+                canvas.move(6, -10, 0)
+                root.update()
+                time.sleep(0.02)
+            global pig1
+            pig1 = 3
+            print pig1
+        elif pig1 == 3:
+            for x in range(0, 10):
+                canvas.move(6, -10, 0)
+                root.update()
+                time.sleep(0.02)
+            global pig1
+            pig1 = 0
+            print pig1
 
 
     def hoyre(self):
