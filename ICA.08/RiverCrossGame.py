@@ -49,8 +49,7 @@ class App:
         self.pig.pack(side=LEFT)
 
 #================================================================
-
-    def venstre(self): # Funksjon for venstreknappen
+    def venstre(self): # Funksjon for venstre knappen
         global boat1
         boat1 = 0      # Setter tilstanden til boat1 til 0
         print boat1
