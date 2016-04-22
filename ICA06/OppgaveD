@@ -101,10 +101,6 @@ class River(SM):
             self.add(['grain in boat'])
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> a39574d888d9ce2123570d2b9f195a5948914945
     # Osv., - definer alle kommandoen som virker på "verden" her ...
 
     def view(self):
