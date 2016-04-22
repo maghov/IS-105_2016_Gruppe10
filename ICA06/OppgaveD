@@ -71,6 +71,7 @@ class River(SM):
         elif ['boat isat right' and 'chicken isat right'] in self.river_db:
             self.remove(['chicken isat right'])
             self.add(['chicken in boat'])
+<<<<<<< HEAD
             #fox
         elif ['boat isat left' and 'fox isat left'] in self.river_db
             self.remove(['fox isat left'])
@@ -84,6 +85,23 @@ class River(SM):
         elif ['boat isat right' and 'fox isat right'] in self.river_db:
             self.remove(['fox isat right'])
             self.add(['fox in boat'])
+=======
+        #grain
+        elif ['boat isat left' and 'grain isat left'] in self.river_db:
+            self.remove(['grain isat left'])
+            self.add(['grain in boat'])
+        elif ['boat isat left' and 'grain in boat'] in self.river_db:
+            self.remove(['grain in boat'])
+            self.add(['grain isat left'])
+        elif ['boat isat right' and 'grain in boat'] in self.river_db:
+            self.remove(['grain in boat'])
+            self.add(['grain isat right'])
+        elif ['boat isat right' and 'grain isat right'] in self.river_db:
+            self.remove(['grain isat right'])
+            self.add(['grain in boat'])
+
+
+>>>>>>> 316218095a150a60317789d875bbeed320d25992
 
 
 
