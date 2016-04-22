@@ -12,7 +12,7 @@ class River(SM):
         self.startState = initialValue
         self.river_db = self.startState
 ##############################################################################
-    def crossriver(self):
+    def crossriver(self):#Holder styr på om båten er på høyre eller venstre side
         # Båten er til høyre
         if ['boat isat left'] in self.river_db:
             self.remove(['boat isat left'])
@@ -22,7 +22,7 @@ class River(SM):
             self.remove(['boat isat right'])
             self.add(['boat isat left'])
 
-        # Båten er til venstre og kyliing er i båten
+        #CHICKEN# Båten er til venstre og kyliing er i båten
         elif ['boat isat left 'and' chicken in boat'] in self.river_db:
             self.remove(['boat isat left'])
             self.remove(['chicken isat left'])
@@ -33,13 +33,12 @@ class River(SM):
             self.remove(['boat isat right'])
             self.add(['boat isat right'])
 
-        # Båten er til venstre og korn er i båten    
+        #GRAIN# Båten er til venstre og korn er i båten
         elif ['boat isat left 'and' grain in boat'] in self.river_db:
             self.remove(['boat isat left'])
             self.remove(['grain isat left'])
             self.add(['boat isat right'])
             self.add(['grain isat boat'])
-
         # Båten er til venstre og korn er i båten
         elif ['boat isat right' and 'grain in boat'] in self.river_db:
             self.remove(['boat isat right'])
@@ -47,8 +46,7 @@ class River(SM):
             self.add(['boat isat right'])
             self.add(['grain isat boat'])
 
-
-        # Båten er til venstre og grisen er i båten
+        #PIG# Båten er til venstre og grisen er i båten
         elif ['boat isat right' and 'pig in boat'] in self.river_db:
             self.remove(['boat isat right'])
             self.remove(['pig isat right'])
