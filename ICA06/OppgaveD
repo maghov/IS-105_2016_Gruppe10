@@ -58,6 +58,7 @@ class River(SM):
             self.add(['pig isat boat'])
 
     def putin(self, item):
+        #chicken
         if ['boat isat left' and 'chicken isat left'] in self.river_db:
             self.remove(['chicken isat left'])
             self.add(['chicken in boat'])
@@ -70,9 +71,19 @@ class River(SM):
         elif ['boat isat right' and 'chicken isat right'] in self.river_db:
             self.remove(['chicken isat right'])
             self.add(['chicken in boat'])
-
-
-
+            #fox
+        elif ['boat isat left' and 'fox isat left'] in self.river_db
+            self.remove(['fox isat left'])
+            self.add(['fox in boat'])
+        elif ['boat isat left' and 'fox in boat'] in self.river_db:
+            self.remove(['fox in boat'])
+            self.add(['fox isat left'])
+        elif ['boat isat right' and 'fox in boat'] in self.river_db:
+            self.remove(['fox in boat'])
+            self.add(['fox isat right'])
+        elif ['boat isat right' and 'fox isat right'] in self.river_db:
+            self.remove(['fox isat right'])
+            self.add(['fox in boat'])
 
 
 
