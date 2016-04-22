@@ -13,13 +13,49 @@ class River(SM):
         self.river_db = self.startState
 
     def crossriver(self):
-        # Meget primitiv implementasjon av crossriver, her må flere detaljer inn!
+        # Båten er til høyre
         if ['boat isat left'] in self.river_db:
             self.remove(['boat isat left'])
             self.add(['boat isat right'])
+        # Båten er til venstre
         elif ['boat isat right'] in self.river_db:
             self.remove(['boat isat right'])
             self.add(['boat isat left'])
+        # Båten er til venstre og kyliing er i båten
+        elif ['boat isat left 'and' chicken in boat'] in self.river_db:
+            self.remove(['boat isat left'])
+            self.remove(['chicken isat left'])
+            self.add(['boat isat right'])
+            self.add(['chicken isat boat'])
+
+        elif ['boat isat right 'and' chicken in boat'] in self.river_db:
+            self.remove(['boat isat right'])
+            self.add(['boat isat right'])
+
+        # Båten er til høyre,
+        elif ['boat isat right' and 'grain in boat'] in self.river_db:
+            self.remove(['boat isat right'])
+            self.remove(['grain isat right'])
+            self.add(['boat isat right'])
+            self.add(['grain isat boat'])
+
+        elif ['boat isat left 'and' grain in boat'] in self.river_db:
+            self.remove(['boat isat left'])
+            self.remove(['grain isat left'])
+            self.add(['boat isat right'])
+            self.add(['grain isat boat'])
+
+        elif ['boat isat right' and 'pig in boat'] in self.river_db:
+            self.remove(['boat isat right'])
+            self.remove(['pig isat right'])
+            self.add(['boat isat right'])
+            self.add(['pig isat boat'])
+
+        elif ['boat isat right' and 'pig in boat'] in self.river_db:
+            self.remove(['boat isat right'])
+            self.remove(['pig isat right'])
+            self.add(['boat isat right'])
+            self.add(['pig isat boat'])
 
     def putin(self, item):
         if ['boat isat left' and 'chicken isat left'] in self.river_db:
