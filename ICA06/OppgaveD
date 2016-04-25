@@ -2,10 +2,10 @@
 # OBS! Dårlig kodingstil! For eksempel, kommentarer skal høre til funksjoner og være mellom '''disse'''
 
 from sm import SM
-
+import Database
 class River(SM):
 
-    river_db = ['chicken isat left', 'chicken in boat', 'chicken isat right']
+    
 
     # Blir kalt hver gang klassen blir instansiert
     def __init__(self, initialValue):
