@@ -2,10 +2,14 @@
 # OBS! Dårlig kodingstil! For eksempel, kommentarer skal høre til funksjoner og være mellom '''disse'''
 
 from sm import SM
-
+import Database
 class River(SM):
 
+<<<<<<< HEAD
     river_db = []
+=======
+    
+>>>>>>> 972072b89b342385e0a3c1e4d731ff321b95d5ab
 
     # Blir kalt hver gang klassen blir instansiert
     def __init__(self, initialValue):
