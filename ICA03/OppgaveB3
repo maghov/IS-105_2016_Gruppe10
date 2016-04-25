@@ -64,7 +64,7 @@ def encode(message):
 
 
 def test():
-    test_message = "Hei dette er en test"
+    test_message = message
     print encode(test_message)
 
 test()
