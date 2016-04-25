@@ -5,7 +5,7 @@ from sm import SM
 
 class River(SM):
 
-    river_db = ['chicken isat left', 'chicken in boat', 'chicken isat right']
+    river_db = []
 
     # Blir kalt hver gang klassen blir instansiert
     def __init__(self, initialValue):
