@@ -74,7 +74,7 @@ class River(SM):
             self.remove(['chicken isat right'])
             self.add(['chicken in boat'])
             #fox
-        elif ['boat isat left' and 'fox isat left'] in self.river_db
+        elif ['boat isat left' and 'fox isat left'] in self.river_db:
             self.remove(['fox isat left'])
             self.add(['fox in boat'])
         elif ['boat isat left' and 'fox in boat'] in self.river_db:
@@ -99,7 +99,6 @@ class River(SM):
         elif ['boat isat right' and 'grain isat right'] in self.river_db:
             self.remove(['grain isat right'])
             self.add(['grain in boat'])
-
 
 
     # Osv., - definer alle kommandoen som virker på "verden" her ...
