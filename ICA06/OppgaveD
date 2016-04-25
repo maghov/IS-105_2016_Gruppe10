@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
-# OBS! Dårlig kodingstil! For eksempel, kommentarer skal høre til funksjoner og være mellom '''disse'''
 
 from sm import SM
 import Database
 class River(SM):
 
-    
+
 
     # Blir kalt hver gang klassen blir instansiert
     def __init__(self, initialValue):
