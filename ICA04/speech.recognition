@@ -43,9 +43,7 @@ try:
         except sr.RequestError as e:
             #Hvis den ikke klarer å koble til Google biblioteket skal den printe dette
             print("Uh oh! Couldn't request results from Google Speech Recognition service; {0}".format(e))
-<<<<<<< HEAD
+
 
 except KeyboardInterrupt:
     pass
-=======
->>>>>>> 019be9b51b3cd81f1185f1f01e6706dd3d47e27b

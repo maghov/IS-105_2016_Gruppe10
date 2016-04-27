@@ -10,7 +10,7 @@ fo = open("hamlet1.txt", "r")
 
 def code():
     '''
-    Implements an initial table for LZW algorithm 
+    Implements an initial table for LZW algorithm
     '''
     table = {}
     table[1] = 't'
@@ -22,7 +22,7 @@ def code():
     table[7] = ' '
     return table
 
-    
+
 
 
 def encode(fo):
@@ -44,10 +44,9 @@ def encode(fo):
             code_for_string.append(k)
     print table
     return code_for_string
-    
+
 def test():
 	print encode(fo)
 test()
 
 #print fo.read()
-
