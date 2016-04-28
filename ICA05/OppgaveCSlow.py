@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+import matplotlib.pyplot as plt; plt.rcdefaults()
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -5,11 +7,11 @@ N = 4 # antall grafer
 slow_tid_needle100k = (65.28, 71.89, 43.54, 44.62)
 
 
-ind = np.arange(N)  
+ind = np.arange(N)
 width = 0.35
 
 fig, ax = plt.subplots()
-rects1 = ax.bar(ind, slow_tid_needle100k, width, color='r') 
+rects1 = ax.bar(ind, slow_tid_needle100k, width, color='r')
 
 slow_tid_needle900k = (60.88, 71.31, 41.27, 43.98)
 
@@ -37,6 +39,6 @@ autolabel(rects2)
 plt.show()
 
 """
-Referanse: 
+Referanse:
 http://matplotlib.org/examples/api/barchart_demo.html
 """

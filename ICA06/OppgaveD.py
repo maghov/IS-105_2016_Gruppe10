@@ -4,15 +4,6 @@ from sm import SM
 import Database
 class River(SM):
 
-<<<<<<< HEAD:ICA06/OppgaveD
-
-=======
-<<<<<<< HEAD
-    river_db = []
-=======
-    
->>>>>>> 972072b89b342385e0a3c1e4d731ff321b95d5ab
->>>>>>> c8ee5140f3b44658358c6248e62be8c1bfb5ce23:ICA06/OppgaveD.py
 
     # Blir kalt hver gang klassen blir instansiert
     def __init__(self, initialValue):
