@@ -2,56 +2,53 @@
 
 def code():
     '''
-    Implements a code: ASCII mapping from binary string to ASCII string
-    and the other way around. Load the tables in memory. 
+    Implementerer en kode: ASCII mapping fra binær string til ASCII string,
+    og tilbake. Laster opp tabeller i minnet
     '''
     
     binary = {}
     ascii = {}
     
-    # Generate ascii code
+    # Genererer Ascii kode
     for i in range(0,128) :
         ascii[format(i,'08b')] = chr(i)
     
     
-    # Reverse the ascii code, this will be binary
+    # Reverserer ascii koden til binært
     for k, v in ascii.iteritems():
         binary[v] = binary.get(v, [])
         binary[v].append(k)   
     
-    return ascii # A suggested way to load tables in memory
+    return ascii # En foreslått vei for å laste opp i minnet
 
 def encode():
     pass
 
 def decode(sourcecode,n, ascii):
     '''
-    Decode a sourcecode using chunks of size n
+    Dekoderer en kildekode ved bruk av chuncks av størrelse n
     '''
-    # You will need a dictionary holding the mapping between binary string and ASCII chars
+    # Her trengs en ordbok som har mappingen mellom binær string og ASCII karakterer
     
     sentence = ""    
     
-    f = open(sourcecode, mode='rb') # Open a file with filename <sourcecode>
+    f = open(sourcecode, mode='rb') # Åpner en fil med filnavn <sourcecode>
     while True:
-        chunk = f.read(n)           # Read n characters at time from an open file
-        if chunk == '':             # This is one way to check for the End Of File in Python 
+        chunk = f.read(n)           # Leser n antall karakterer fra en åpen fil
+        if chunk == '':             # Dette er en måte å sjekke End Of File i Python
             break
         if chunk != '\n':
             
-            setence = ""            # The ascii sentence generated
+            setence = ""            # ASCII setningen generert
             
-            # create a s
+            # Lager en setning
             sentence = sentence + ascii[chunk]
             
     return sentence
 
 def test():
-    '''
-    A placeholder for some test cases.
-    It is recommended that you use some existing framework, like unittest,
-    but for a temporary testing in a development version can be done 
-    directly in the module.
+    '''  
+     En plassholder for noen testtilfeller.
     '''
     
     print decode('filnavn', 8, code())
