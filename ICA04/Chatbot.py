@@ -8,7 +8,7 @@ from math import sqrt
 connection = sqlite3.connect('chatbot.sqlite')
 cursor = connection.cursor()
 
-# lage tabbelen vi trenger for programmet
+# lager tabbelen vi trenger for programmet
 try:
     # lager en tabell som inneholder ordene
     cursor.execute('''
@@ -91,6 +91,6 @@ while True:
     if row is None:
         cursor.execute('SELECT rowid, sentence FROM sentences WHERE used = (SELECT MIN(used) FROM sentences) ORDER BY RANDOM() LIMIT 1')
         row = cursor.fetchone()
-    # sier til databasen at setningen har blitt brukt engang til. 
+    # sier til databasen at setningen har blitt brukt engang til.
     B = row[1]
     cursor.execute('UPDATE sentences SET used=used+1 WHERE rowid=?', (row[0],))
