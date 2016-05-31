@@ -3,16 +3,16 @@ from river import *
 import socket
 import sys
 
-#Dictionary and list of possible commands and their explanation
+#Liste over mulige kommandoer og beskrivelse av hva de gjør.
 commandexplaination = {'chicken' : 'cross with chicken', 'fox' : 'cross with a fox', 'grain' : 'cross with grain', 'none' : 'cross without any items', 'quit' : 'ends the simulation', 'restart' : 'restarter programmet'}
 possiblecommands = ['chicken', 'fox', 'grain', 'none', 'quit', 'solvePuzzle', 'db', 'restart']
 
-
+#Printer databasen
 def db():
     r.database()
     fullLoop()
 
-#Function to print the explanation of possible commands to the user.
+#Funksjon som printer mulige kommandoer for brukeren
 def help():
     print 'List of possible commands:'
     print 'chicken: '+commandexplaination['chicken']
@@ -23,18 +23,19 @@ def help():
     print 'restart: '+commandexplaination['restart']
     fullLoop()
 
+#Funksjon for å restarte spillet. Virker ikke helt enda.
 def restart():
     self.startState = initialValue
     self.river_db = self.startState
 
-#
+#Printer
 def returnInput():
     print '------------------------------------------------------------'
     print 'Which good would you like to move? Press return to step through the simulation. Type help for commands'
     inp = raw_input('')
     return inp
 
-
+#Lager et tomt felt for å skrive inn
 def skipper():
     raw_input('')
 
