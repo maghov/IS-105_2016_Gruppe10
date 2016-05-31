@@ -1,10 +1,14 @@
+# Kode er hentet fra:
+# http://www.binarytides.com/programming-udp-sockets-in-python
+# Koden er tilvirket noe i forhold til ICA
+
 import socket
 import sys
 
-HOST = 'localhost'   # Symbolic name meaning all available interfaces
-PORT = 8888 # Arbitrary non-privileged port
+HOST = 'localhost'   # IP til server som clienten kobler til
+PORT = 8888 # Port til HOST
 
-# Datagram (udp) socket
+# Oppretter en socket
 try :
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     print 'Socket created'
@@ -13,7 +17,7 @@ except socket.error, msg :
     sys.exit()
 
 
-# Bind socket to local host and port
+#  - Setter opp og binder forbindelsen
 try:
     s.bind((HOST, PORT))
 except socket.error , msg:
@@ -22,27 +26,33 @@ except socket.error , msg:
 
 print 'Socket bind complete'
 
-#now keep talking with the client
+# Jobber med klienter og mottar data
 while 1:
-    # receive data from client (data, addr)
     d = s.recvfrom(1024)
     data = d[0]
     addr = d[1]
-
-    if data == "start":
-        import RiverCrossGame
-
-
-    if data == "grain":
-        grain()
-
-
-    if not data:
+    #Tester hvis data fra clienten stemmer med "Start"
+    if data == "Start":
+        #Starter funksjonen testStart
+        testStart()
         break
+        #Tester hvis data fra clienten stemmer med "Chicken"
+        if data =='Chicken':
+            reply = 'LOL'
+            s.sendto(reply , addr)
+            print 'Message[' + addr[0] + ':' + str(addr[1]) + '] - ' + data.strip()
+    else:
+        reply = 'Feil svar, proev igjen!'
+        s.sendto(reply , addr)
+        print 'Message[' + addr[0] + ':' + str(addr[1]) + '] - ' + data.strip()
 
-    reply = 'OK...' + data
+    #Funksjon som importerer river crossing spillet.
+    def testStart():
+        reply = 'Starter spill'
+        s.sendto(reply , addr)
+        print 'Message[' + addr[0] + ':' + str(addr[1]) + '] - ' + data.strip()
+        import runme
+        return
 
-    s.sendto(reply , addr)
-    print 'Message[' + addr[0] + ':' + str(addr[1]) + '] - ' + data.strip()
-
+#Lukker forbindelsen
 s.close()
