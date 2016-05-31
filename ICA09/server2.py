@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
+<<<<<<< HEAD
 # Kode for kommunikasjon over nettverk er hentet fra.
+=======
+# Kode for kommunikasjon over UDP er tatt fra denne siden:
+>>>>>>> 4e7ad9f5e3c8b7aa275b0f48f710c1ba9b459bb0
 # http://www.binarytides.com/programming-udp-sockets-in-python
 
 import socket
