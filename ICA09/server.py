@@ -38,7 +38,7 @@ while 1:
         break
         #Tester hvis data fra clienten stemmer med "Chicken"
         if data =='Chicken':
-            reply = 'LOL'
+            reply = 'kylling'
             s.sendto(reply , addr)
             print 'Message[' + addr[0] + ':' + str(addr[1]) + '] - ' + data.strip()
     else:
