@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import re
 import sqlite3
 from collections import Counter
@@ -91,6 +92,6 @@ while True:
     if row is None:
         cursor.execute('SELECT rowid, sentence FROM sentences WHERE used = (SELECT MIN(used) FROM sentences) ORDER BY RANDOM() LIMIT 1')
         row = cursor.fetchone()
-    # sier til databasen at setningen har blitt brukt engang til. 
+    # sier til databasen at setningen har blitt brukt engang til.
     B = row[1]
     cursor.execute('UPDATE sentences SET used=used+1 WHERE rowid=?', (row[0],))
