@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from sm import *
 from river import *
 import socket
@@ -28,17 +29,18 @@ def restart():
     self.startState = initialValue
     self.river_db = self.startState
 
-#Printer
+#Printer dette i starten av koden og bruker det du skriver som input.
 def returnInput():
     print '------------------------------------------------------------'
     print 'Which good would you like to move? Press return to step through the simulation. Type help for commands'
     inp = raw_input('')
     return inp
 
-#Lager et tomt felt for å skrive inn
+#Lager et tomt felt for å skrive inn tekst
 def skipper():
     raw_input('')
 
+#Funksjon for å crossriver med et objekt
 def fullCrossItem(good):
     r.putIn(good)
     skipper()
@@ -47,21 +49,22 @@ def fullCrossItem(good):
     r.takeOut(good)
     fullLoop()
 
+#Funksjon for å krysse uten objekter
 def fullCrossNoItem():
     skipper()
     r.crossriver()
     skipper()
-    skipper()
     fullLoop()
 
-def quickCrossItem(good): # A version that does not require return key inputs to step through the process, nor loops back to command input. Mostly used for testing/solving quickly.
+def quickCrossItem(good): # En funksjon brukt for testing og å løse oppgaven fort.
     r.putIn(good)
     r.crossriver()
     r.takeOut(good)
 
-def quickCrossNoItem(): # A version that does not require return key inputs to step through the process, nor loops back to command input. Mostly used for testing/solving quickly.
+def quickCrossNoItem(): # En funksjon brukt for testing og å løse oppgaven fort.
     r.crossriver()
 
+#Løser spillet automatisk ved hjelp av testfunksjonene
 def solvePuzzle(c, g, f):
     quickCrossItem(c)
     quickCrossNoItem()
@@ -71,6 +74,7 @@ def solvePuzzle(c, g, f):
     quickCrossNoItem()
     quickCrossItem(c)
 
+#Funksjon som sjekker hva du skriver og gjør handlinger utifra dette
 def fullLoop():
     temp = returnInput()
     if (temp == 'none'):
@@ -82,7 +86,7 @@ def fullLoop():
     elif (temp not in possiblecommands):
         print '---Invalid command!---'
         help()
-    # Quick solution for testing purposes
+    # Kommando for å løse spillet automatisk.
     elif (temp == 'solvePuzzle'):
         solvePuzzle('chicken', 'grain', 'fox')
     elif (temp == 'db'):
@@ -92,12 +96,12 @@ def fullLoop():
 
 
 
-# Start the river simulation, update and show state. Start Main loop
+# Starter riverspillet
 r = River([['boat isat left'],['chicken isat left'],['fox isat left'],['grain isat left']])
 r.start()
 r.updateWorld()
 fullLoop()
 
-# Grab the possibility to end the simulation from river.py
+# Avslutter spillet
 def quit():
     r.killWorld()

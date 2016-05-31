@@ -301,12 +301,12 @@ while 1:
     data = d[0]
     addr = d[1]
     #Tester hvis data fra clienten stemmer med "Start"
-    if data == "Start":
+    if (data == "Start"):
         #Starter funksjonen testStart
         testStart()
         break
         #Tester hvis data fra clienten stemmer med "Chicken"
-        if data =='Chicken':
+        if (data =='Chicken'):
             reply = 'LOL'
             s.sendto(reply , addr)
             print 'Message[' + addr[0] + ':' + str(addr[1]) + '] - ' + data.strip()
