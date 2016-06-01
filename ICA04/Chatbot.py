@@ -92,6 +92,14 @@ while True:
     if row is None:
         cursor.execute('SELECT rowid, sentence FROM sentences WHERE used = (SELECT MIN(used) FROM sentences) ORDER BY RANDOM() LIMIT 1')
         row = cursor.fetchone()
+<<<<<<< HEAD
     # sier til databasen at setningen har blitt brukt engang til.
+=======
+<<<<<<< HEAD
+    # sier til databasen at setningen har blitt brukt engang til. 
+=======
+    # sier til databasen at setningen har blitt brukt engang til.
+>>>>>>> 4e7ad9f5e3c8b7aa275b0f48f710c1ba9b459bb0
+>>>>>>> e9e1ff08e0df664bc43d4700625b18425f458354
     B = row[1]
     cursor.execute('UPDATE sentences SET used=used+1 WHERE rowid=?', (row[0],))
