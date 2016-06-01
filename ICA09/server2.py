@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
-<<<<<<< HEAD
 # Kode for kommunikasjon over nettverk er hentet fra.
-=======
 # Kode for kommunikasjon over UDP er tatt fra denne siden:
->>>>>>> 4e7ad9f5e3c8b7aa275b0f48f710c1ba9b459bb0
 # http://www.binarytides.com/programming-udp-sockets-in-python
 
 import socket
@@ -307,7 +304,9 @@ while 1:
     #Tester hvis data fra clienten stemmer med "Start"
     if (data == "Start"):
         #Starter funksjonen testStart
-        testStart()
+        r = River([['boat isat left'],['chicken isat left'],['fox isat left'],['grain isat left']])
+        r.start()
+        r.updateWorld()
         break
         #Tester hvis data fra clienten stemmer med "Chicken"
         if (data =='Chicken'):
@@ -319,13 +318,6 @@ while 1:
         s.sendto(reply , addr)
         print 'Message[' + addr[0] + ':' + str(addr[1]) + '] - ' + data.strip()
 
-    #Funksjon som importerer river crossing spillet.
-    def testStart():
-        reply = 'Starter spill'
-        s.sendto(reply , addr)
-        print 'Message[' + addr[0] + ':' + str(addr[1]) + '] - ' + data.strip()
-        import runme
-        return
 
 #Lukker forbindelsen
 s.close()
