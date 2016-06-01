@@ -1,24 +1,29 @@
 import shelve
 import sys
 import os
+encoding='UTF-8'
 
+#Oppretter eller åpner filesystem.fs
 fs = shelve.open('filesystem.fs', writeback=True)
 current_dir = []
 
 def install(fs):
 
-         # create root and others
+    # Oppretter bruker of root
     username = raw_input('What do you want your username to be? ')
 
     fs[""] = {"System": {}, "Users": {username: {}}}
 
+#Returnerer filer fra opprettet dictionary
 def current_dictionary():
     """Return a dictionary representing the files in the current directory"""
     d = fs[""]
+
     for key in current_dir:
         d = d[key]
-    return d 
+    return d
 
+#Viser contents
 def ls(args):
 
     print 'Contents of directory', "/" + "/".join(current_dir) + ':'
@@ -27,6 +32,7 @@ def ls(args):
 
         print i
 
+#AApner contents
 def cd(args):
 
     if len(args) != 1:
@@ -44,29 +50,32 @@ def cd(args):
     else:
         current_dir.append(args[0])
 
+#Lager directory
 def mkdir(args):
     if len(args) != 1:
         print "Usage: mkdir "
         return
 
-#To create an empty directory there and sync back to shelve dictionary!
-
+#Lager tom dictionary og returnerer til root brukernavn
     d = current_dictionary()[args[0]] = {}
     fs.sync()
 
+#Skriver ut gjeldende directory
 def pwd(args):
 
     d=current_dir
     print d[-1]
 
+#Avslutt - gaa ut av directory
 def quit(args):
     sys.exit(0)
-    
+
+#Lager ny fil i selve directory
 def add(args):
 	full_path = '/'.join(current_dir + ["test.txt"])
 	with open(full_path, "a+") as f:
     		f.write("test")
-    		
+#Sletter directory
 def rmdir(args):
 	os.rmdir('/'.join(current_dir + ["test"]))
 
@@ -80,5 +89,4 @@ while True:
     if cmd in COMMANDS:
         COMMANDS[cmd](raw.split()[1:])
 
-#Use break instead of exit, so you will get to this point.
 raw_input('Press the Enter key to shutdown...')
