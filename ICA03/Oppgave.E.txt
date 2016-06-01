@@ -1,2 +1,0 @@
-Vi fikk ikke til denne oppgave, siden vi ikke fikk til komprimeringen av hamlet filen. Men hvis vi hadde fått det til, 
-ville vi funnet ut hvor mange bits det er i selve filen(hamlet) og hvor mange bits den komprimerte kodefilen er på. 
