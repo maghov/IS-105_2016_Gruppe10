@@ -1,17 +1,9 @@
-#from sys import argv
-
-#script, filename = argv
-
-
-#target = open(filename, 'r')
-#file object = open(file_name )
-fo = open("hamlet1.txt", "r")
+fo = open("hamlet1.txt", "r") #Åpner filen hamlet.
 
 
 def code():
-    '''
-    Implements an initial table for LZW algorithm 
-    '''
+
+    #Implementerer en tabel for LZW lgoritime.
     table = {}
     table[1] = 't'
     table[2] = 'o'
@@ -22,7 +14,7 @@ def code():
     table[7] = ' '
     return table
 
-    
+
 
 
 def encode(fo):
@@ -44,10 +36,9 @@ def encode(fo):
             code_for_string.append(k)
     print table
     return code_for_string
-    
+
 def test():
 	print encode(fo)
 test()
 
 #print fo.read()
-

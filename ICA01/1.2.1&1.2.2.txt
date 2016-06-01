@@ -8,13 +8,6 @@ Louise: 3 bit
 a) 
 Fordi en 1bits kode tar mindre plass og X har størst sannsynlighet, derfor vil den forekomme oftere. Derfor er det smartere og gi den 1 bit. 
 b) 00101001100000  = X X Y Y X Z X X X X X 
+
 c) ??? 
 
-1.2.3 
-Vi skjønner ikke helt hvordan vi skal gjøre denne. 
-a) 
-b) 
-c) 
-d) 
-1.2.4 
-Vi skjønner ikke helt hvordan vi skal gjøre denne. 
