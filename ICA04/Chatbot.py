@@ -5,7 +5,7 @@ from collections import Counter
 from string import punctuation
 from math import sqrt
 
-# initialize the connection to the database
+# Initialiserer tilkoblingen til databasen
 connection = sqlite3.connect('chatbot.sqlite')
 cursor = connection.cursor()
 
@@ -23,8 +23,7 @@ try:
             sentence TEXT UNIQUE,
             used INT NOT NULL DEFAULT 0
         )''')
-    # create association between weighted words and the next sentence
-    #
+    # Lager en assosiasjon mellom vektede ord og den neste setningen
     cursor.execute('''
         CREATE TABLE associations (
             word_id INT NOT NULL,
@@ -88,7 +87,7 @@ while True:
     cursor.execute('SELECT sentence_id, sentence, SUM(weight) AS sum_weight FROM results GROUP BY sentence_id ORDER BY sum_weight DESC LIMIT 1')
     row = cursor.fetchone()
     cursor.execute('DROP TABLE results')
-    # hvis ikke, så ramdomly velg en av de minst brukte setningene.
+    # hvis ikke, så velger den en av de minst brukte setningene.
     if row is None:
         cursor.execute('SELECT rowid, sentence FROM sentences WHERE used = (SELECT MIN(used) FROM sentences) ORDER BY RANDOM() LIMIT 1')
         row = cursor.fetchone()
