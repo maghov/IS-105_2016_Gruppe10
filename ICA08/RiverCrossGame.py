@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from Tkinter import *
-#import time
+import time
 
 root = Tk()
 
